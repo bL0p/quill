@@ -68,13 +68,13 @@ class Format
 
     bullet:
       type: Format.types.LINE
-      exclude: 'list'
+      exclude: ['list', 'h1', 'h2', 'h3', 'h4']
       parentTag: 'UL'
       tag: 'LI'
 
     list:
       type: Format.types.LINE
-      exclude: 'bullet'
+      exclude: ['bullet', 'h1', 'h2', 'h3', 'h4']
       parentTag: 'OL'
       tag: 'LI'
 

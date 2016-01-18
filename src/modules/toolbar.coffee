@@ -10,7 +10,7 @@ class Toolbar
   @formats:
     LINE    : { 'align', 'bullet', 'list', 'h1', 'h2', 'h3', 'h4' }
     SELECT  : { 'align', 'background', 'color', 'font', 'size' }
-    TOGGLE  : { 'bold', 'bullet', 'image', 'italic', 'link', 'list', 'strike', 'underline' }
+    TOGGLE  : { 'bold', 'bullet', 'image', 'italic', 'link', 'list', 'strike', 'underline', 'h1', 'h2', 'h3', 'h4' }
     TOOLTIP : { 'image', 'link' }
 
   constructor: (@quill, @options) ->
@@ -98,7 +98,7 @@ class Toolbar
     else
       @quill.formatText(range, format, value, 'user')
     _.defer( =>
-      this.updateActive(range, ['bullet', 'list'])  # Clear exclusive formats
+      this.updateActive(range, ['bullet', 'list', 'h1', 'h2', 'h3', 'h4'])  # Clear exclusive formats
       this.setActive(format, value)
     )
 
